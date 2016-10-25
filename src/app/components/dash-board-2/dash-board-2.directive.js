@@ -27,7 +27,7 @@
 
     function link() {
       var formatAsPercentage = d3.format('%'),
-        formatAsPercentage1Dec = d3.format('.1%'),
+        formatAsPercentage1Dec = d3.format('.1%'),  /*jshint unused:false*/
         formatAsInteger = d3.format(','),
         fsec = d3.timeFormat('%S s'),
         fmin = d3.timeFormat('%M m'),
@@ -71,10 +71,10 @@
         var width = 400,
           height = 400,
           outerRadius = Math.min(width, height) / 2,
-          innerRadius = outerRadius * .999,
+          innerRadius = outerRadius * 0.999,
           // for animation
-          innerRadiusFinal = outerRadius * .5,
-          innerRadiusFinal3 = outerRadius * .45,
+          innerRadiusFinal = outerRadius * 0.5,
+          innerRadiusFinal3 = outerRadius * 0.45,
           //color = d3.scale.category20() //builtin range of colors
           color = d3.scaleOrdinal(d3.schemeCategory20);
 
@@ -126,7 +126,7 @@
         // Add a label to the larger arcs, translated to the arc centroid and rotated.
         // source: http://bl.ocks.org/1305337#index.html
         arcs.filter(function(d) {
-            return d.endAngle - d.startAngle > .2;
+            return d.endAngle - d.startAngle > 0.2;
           })
           .append('svg:text')
           .attr('dy', '.35em')
@@ -156,7 +156,7 @@
 
 
         function mouseover() {
-          d3.select(this).select('path').transition()
+          d3.select(this).select('path').transition() // jshint ignore:line
             .duration(750)
             //.attr('stroke','red')
             //.attr('stroke-width', 1.5)
@@ -164,7 +164,7 @@
         }
 
         function mouseout() {
-          d3.select(this).select('path').transition()
+          d3.select(this).select('path').transition() // jshint ignore:line
             .duration(750)
             //.attr('stroke','blue')
             //.attr('stroke-width', 1.5)
@@ -358,7 +358,7 @@
       function datasetBarChosen(group) {
         var ds = [];
         for (var x in datasetBarChart) {
-          if (datasetBarChart[x].group == group) {
+          if (datasetBarChart[x].group === group) {
             ds.push(datasetBarChart[x]);
           }
         }
@@ -398,7 +398,7 @@
         var margin = basics.margin,
           width = basics.width,
           height = basics.height,
-          colorBar = basics.colorBar,
+          colorBar = basics.colorBar,  /*jshint unused:false*/
           barPadding = basics.barPadding;
 
         var xScale = d3.scaleLinear()
@@ -522,7 +522,7 @@
         var margin = basics.margin,
           width = basics.width,
           height = basics.height,
-          colorBar = basics.colorBar,
+          colorBar = basics.colorBar,  /*jshint unused:false*/
           barPadding = basics.barPadding;
 
         var xScale = d3.scaleLinear()
@@ -753,12 +753,12 @@
       }];
 
       // set initial category value
-      var group = 'All';
+      var group = 'All'; // jshint ignore:line
 
       function datasetLineChartChosen(group) {
         var ds = [];
         for (var x in datasetLineChart) {
-          if (datasetLineChart[x].group == group) {
+          if (datasetLineChart[x].group === group) {
             ds.push(datasetLineChart[x]);
           }
         }
@@ -882,7 +882,7 @@
 
         var basics = dsLineChartBasics();
 
-        var margin = basics.margin,
+        var margin = basics.margin,  /*jshint unused:false*/
           width = basics.width,
           height = basics.height;
 
@@ -930,11 +930,11 @@
           .duration(750)
           .attr('class', 'dot')
           .attr('fill', function(d) {
-            return d.measure == d3.min(currentDatasetLineChart, function(d) {
+            return d.measure === d3.min(currentDatasetLineChart, function(d) {
               return d.measure;
-            }) ? 'red' : (d.measure == d3.max(currentDatasetLineChart, function(d) {
+          }) ? 'red' : (d.measure === d3.max(currentDatasetLineChart, function(d) {
               return d.measure;
-            }) ? 'green' : 'white')
+          }) ? 'green' : 'white');
           })
           .attr('cx', line.x())
           .attr('cy', line.y())

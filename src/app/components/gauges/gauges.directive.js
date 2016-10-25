@@ -23,14 +23,14 @@
     };
 
     function link() {
-      google.charts.load('current', {
+      google.charts.load('current', { // jshint ignore:line
         'packages': ['gauge']
       });
-      google.charts.setOnLoadCallback(drawChart);
+      google.charts.setOnLoadCallback(drawChart);  // jshint ignore:line
 
       function drawChart() {
 
-        var data = google.visualization.arrayToDataTable([
+        var data = google.visualization.arrayToDataTable([ // jshint ignore:line
           ['Label', 'Value'],
           ['Memory', 80],
           ['CPU', 55],
@@ -47,7 +47,7 @@
           minorTicks: 5
         };
 
-        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div')); // jshint ignore:line
 
         chart.draw(data, options);
 

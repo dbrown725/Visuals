@@ -225,8 +225,8 @@
           // Animating the pie-slice requiring a custom function which specifies
           // how the intermediate paths should be drawn.
           function arcTween(a) {
-            var i = d3.interpolate(this._current, a);
-            this._current = i(0);
+            var i = d3.interpolate(this._current, a); // jshint ignore:line
+            this._current = i(0); // jshint ignore:line
             return function(t) {
               return arc(i(t));
             };

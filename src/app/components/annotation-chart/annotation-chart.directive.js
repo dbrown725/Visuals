@@ -24,13 +24,13 @@
     };
 
     function link() {
-      google.charts.load('current', {
+      google.charts.load('current', { // jshint ignore:line
         'packages': ['annotationchart']
       });
-      google.charts.setOnLoadCallback(drawChart);
+      google.charts.setOnLoadCallback(drawChart); // jshint ignore:line
 
       function drawChart() {
-        var data = new google.visualization.DataTable();
+        var data = new google.visualization.DataTable(); // jshint ignore:line
         data.addColumn('date', 'Date');
         data.addColumn('number', 'Kepler-22b mission');
         data.addColumn('string', 'Kepler title');
@@ -59,7 +59,7 @@
           ]
         ]);
 
-        var chart = new google.visualization.AnnotationChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.AnnotationChart(document.getElementById('chart_div')); // jshint ignore:line
 
         var options = {
           displayAnnotations: true
