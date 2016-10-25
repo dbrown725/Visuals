@@ -1,0 +1,19 @@
+<div class="d3">
+  <h2 ng-if="D3.type === 'donut'">Populations of various age groups</h2>
+  <donut ng-if="D3.type === 'donut'"></donut>
+
+  <h2 ng-if="D3.type === 'bar'">Frequency of letters in the English language</h2>
+  <bar ng-if="D3.type === 'bar'"></bar>
+
+  <h2 ng-if="D3.type === 'line'">The daily average temperatures of New York, San Francisco and Austin 2011-2012</h2>
+  <line ng-if="D3.type === 'line'"></line>
+
+  <h2 ng-if="D3.type === 'dashboard'">Interactive DashBoard</h2>
+  <dash-board ng-if="D3.type === 'dashboard'"></dash-board>
+
+  <h2 ng-if="D3.type === 'usmap'">US Map places lived</h2>
+  <us-map ng-if="D3.type === 'usmap'"></us-map>
+
+  <h2 ng-if="D3.type === 'dashboard2'">Interactive DashBoard 2</h2>
+  <dash-board-2 ng-if="D3.type === 'dashboard2'"></dash-board-2>
+</div>

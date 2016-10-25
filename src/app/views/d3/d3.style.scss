@@ -1,0 +1,32 @@
+.d3 {
+
+  //donut chart styles
+  .arc text {
+    font: 10px sans-serif;
+    text-anchor: middle;
+  }
+  .arc path {
+    stroke: #fff;
+  }
+
+  //bar chart styles
+  .bar {
+    fill: steelblue;
+  }
+  .bar:hover {
+    fill: brown;
+  }
+  .axis--x path {
+    display: none;
+  }
+
+  //line chart styles
+  .axis--x path {
+    display: none;
+  }
+  .line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+  }
+}
