@@ -3,3 +3,59 @@
 h1 {
   color: red;
 }
+
+.user-info {
+  border: 1px solid  black;
+  width: 600px;
+  padding: 20px;
+
+  .user-label {
+    width: 200px;
+    padding-left: 20px;
+    display: inline-block;
+  }
+
+  header {
+    width: 200px;
+    font-weight: 800;
+    font-size: 24px;
+  }
+}
+
+.id-token {
+  margin: 30px 0;
+  border: 1px solid  black;
+  width: 600px;
+  padding: 20px;
+  overflow: hidden;
+
+  header {
+    width: 200px;
+    font-weight: 800;
+    font-size: 24px;
+  }
+}
+
+.sign-out-btn {
+  margin: 20px 0;
+}
+
+input-area {
+  border: 1px solid  black;
+  width: 400px;
+  margin: 30px 0;
+  padding: 20px;
+  display: block;
+
+  .sign-in-header {
+    font-weight: 800;
+    font-size: 24px;
+  }
+
+  .text {
+    margin: 10px 0;
+    width: 75px;
+    display: inline-block;
+  }
+
+}

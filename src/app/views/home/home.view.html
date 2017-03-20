@@ -1,1 +1,69 @@
 <!-- Controller As lets you keep things nice and name spaced -->
+<div class="user-info">
+  <header>User</header>
+  <br>
+  <div class="user-label">Display Name:</div> {{HomeCtrl.user.displayName}}
+  <br>
+  <div class="user-label">Photo Url:</div> {{HomeCtrl.user.photoURL}}
+  <br>
+  <div class="user-label">mail:</div> {{HomeCtrl.user.email}}
+  <br>
+  <div class="user-label">Email verified:</div> {{HomeCtrl.user.emailVerified}}
+  <br>
+  <div class="user-label">Logged In:</div> {{HomeCtrl.loggedIn}}
+  <br>
+  <div class="user-label">Authentication Provider:</div> {{HomeCtrl.authenticationProvider}}
+</div>
+<div class="id-token">
+  <header>ID Token</header>
+  <div class="user-label">{{HomeCtrl.userToken}}</div>
+</div>
+
+<button class="sign-out-btn" ng-if="HomeCtrl.loggedIn" ng-click="HomeCtrl.signOut()">Sign Out</button>
+<button class="reset-password-btn" ng-if="HomeCtrl.loggedIn && HomeCtrl.passwordUser" ng-click="HomeCtrl.resetPassword()">Reset Password</button>
+<button class="verify-email-btn" ng-if="HomeCtrl.loggedIn && HomeCtrl.passwordUser" ng-click="HomeCtrl.verifyEmail()">Verify Email</button>
+<input-area ng-if="HomeCtrl.loggedIn && HomeCtrl.passwordUser">
+  <div ng-if="HomeCtrl.loggedIn" class="sign-in-header">Change Email Address</div>
+  <div ng-if="HomeCtrl.loggedIn" >New Email address</div>
+  <input type="text" name="email" ng-model="HomeCtrl.inputNewEmail" required>
+  <div ng-if="HomeCtrl.loggedIn" >Password required</div>
+  <input type="password" name="email" ng-model="HomeCtrl.changeEmailPassword" required>
+  <br><br>
+  <button class="change-email-btn" ng-if="HomeCtrl.loggedIn" ng-click="HomeCtrl.changeEmail()">Change Email</button>
+</input-area>
+
+<input-area ng-if="!HomeCtrl.loggedIn">
+  <div ng-if="!HomeCtrl.loggedIn" class="sign-in-header">Password Sign in</div>
+  <div ng-if="!HomeCtrl.loggedIn">
+       <div class="text">Email:</div>
+       <input type="text" name="email" ng-model="HomeCtrl.inputEmail" required>
+  </div>
+  <div ng-if="!HomeCtrl.loggedIn">
+       <div class="text">Password:</div>
+       <input type="password" name="password" ng-model="HomeCtrl.inputPassword" required>
+  </div>
+  <button ng-if="!HomeCtrl.loggedIn" ng-click="HomeCtrl.signInWithEmailAndPassword()">Sign In</button>
+</input-area>
+
+<input-area ng-if="!HomeCtrl.loggedIn">
+  <div ng-if="!HomeCtrl.loggedIn" class="sign-in-header">Google Sign in</div>
+  <button ng-if="!HomeCtrl.loggedIn" ng-click="HomeCtrl.signInWithGoogle()">Sign In</button>
+</input-area>
+
+<input-area ng-if="!HomeCtrl.loggedIn">
+  <div ng-if="!HomeCtrl.loggedIn" class="sign-in-header">Facebook Sign in</div>
+  <button ng-if="!HomeCtrl.loggedIn" ng-click="HomeCtrl.signInWithFacebook()">Sign In</button>
+</input-area>
+
+<input-area ng-if="!HomeCtrl.loggedIn">
+  <div ng-if="!HomeCtrl.loggedIn" class="sign-in-header">Sign up!</div>
+  <div ng-if="!HomeCtrl.loggedIn">
+       <div class="text">Email:</div>
+       <input type="text" name="email" ng-model="HomeCtrl.inputRegEmail" required>
+  </div>
+  <div ng-if="!HomeCtrl.loggedIn">
+       <div class="text">Password:</div>
+       <input type="password" name="password" ng-model="HomeCtrl.inputRegPassword" required>
+  </div>
+  <button ng-if="!HomeCtrl.loggedIn" ng-click="HomeCtrl.registerUser()">Sign up</button>
+</input-area>

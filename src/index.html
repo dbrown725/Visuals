@@ -47,10 +47,28 @@
     <!-- endbuild -->
 
     <!-- https://www.npmjs.com/package/angular2-google-chart -->
+    <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-auth.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script>
       //!important: You want to give this variable(var googleLoaded = false;).This is used to run multiple chart in your jade.
       var googleLoaded = false;
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: <your apiKey>,
+        authDomain: <your authDomain>,
+        databaseURL: <your databaseURL>,
+        storageBucket: <your storageBucket>,
+        messagingSenderId: <your messagingSenderId>
+      };
+      var defaultApp = firebase.initializeApp(config);
+      console.log(defaultApp.name);
+      var provider = new firebase.auth.GoogleAuthProvider();
+      provider.addScope('https://www.googleapis.com/auth/plus.login');
+      var facebookProvider = new firebase.auth.FacebookAuthProvider();
     </script>
 
     <!-- build:js(.) scripts/vendor.js -->
