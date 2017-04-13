@@ -7,6 +7,8 @@ Install [NodeJs](https://nodejs.org/)
 
 Install Bower ```npm install -g bower```
 
+Install dependencies ```npm install && bower install```
+
 To start the development server
 
 ```
