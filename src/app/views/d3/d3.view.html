@@ -1,4 +1,7 @@
 <div class="d3">
+  <h2 ng-if="D3.type === 'line-chart'">Simple line chart</h2>
+  <line-chart ng-if="D3.type === 'line-chart'"></line-chart>
+
   <h2 ng-if="D3.type === 'donut'">Populations of various age groups</h2>
   <donut ng-if="D3.type === 'donut'"></donut>
 
@@ -16,4 +19,10 @@
 
   <h2 ng-if="D3.type === 'dashboard2'">Interactive DashBoard 2</h2>
   <dash-board-2 ng-if="D3.type === 'dashboard2'"></dash-board-2>
+
 </div>
+<button ng-click='D3.downloadPDF()'>
+  Download PDF
+</button>
+<a target="_self" id="hiddenLink" class="hidden" href="{{D3.downloadLink}}" download="output.pdf"></a>
+<br><br>
