@@ -22,6 +22,9 @@
       return {
         restrict: 'AE',
         replace: true,
+        scope: {
+          chart: '@'
+        },
         link: link
       };
 
@@ -58,7 +61,7 @@
                   _line;
           _chart.render = function () { // <-2A
               if (!_svg) {
-                  _svg = d3.select('line-chart').append('svg') // <-2B
+                  _svg = d3.select('.line-chart-' + scope.chart).append('svg') // <-2B
                           .attr('height', _height)
                           .attr('width', _width);
                   renderAxes(_svg);
