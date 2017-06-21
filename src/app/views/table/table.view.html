@@ -1,0 +1,14 @@
+<div class="table">
+  <div class = 'button-wrapper'>
+    <button ng-click="Table.retrieveData('oneDeep')">
+      One Deep
+    </button>
+    <button ng-click="Table.retrieveData('twoDeep')">
+      Two Deep
+    </button>
+    <button ng-click="Table.retrieveData('threeDeep')">
+      Three Deep
+    </button>
+  </div>
+  <table-one responsedata="Table.response" mycallback="Table.handleDrillDownClick(obj, column)"></table-one>
+</div>
