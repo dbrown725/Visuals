@@ -5,63 +5,63 @@
       <tr>
         <td>
           <span ng-if="columnOneShow == true" ng-class="{'column-header': columnOneShow == true}">
-            <a ng-click="!columnOneSortable || sortColumn('1')">
+            <a ng-click="!columnOneSortable || sortColumn('column1')">
               {{columnOneName}}
             </a>
           </span>
         </td>
         <td>
           <span ng-if="columnTwoShow == true" ng-class="{'column-header': columnTwoShow == true}">
-            <a ng-click="!columnTwoSortable || sortColumn('2')">
+            <a ng-click="!columnTwoSortable || sortColumn('column2')">
               {{columnTwoName}}
             </a>
           </span>
         </td>
         <td>
           <span ng-if="columnThreeShow == true" ng-class="{'column-header': columnThreeShow == true}">
-            <a ng-click="!columnThreeSortable || sortColumn('3')">
+            <a ng-click="!columnThreeSortable || sortColumn('column3')">
              {{columnThreeName}}
             </a>
           </span>
         </td>
         <td>
           <span ng-if="columnFourShow == true" ng-class="{'column-header': columnFourShow == true}">
-            <a ng-click="!columnFourSortable || sortColumn('4')">
+            <a ng-click="!columnFourSortable || sortColumn('column4')">
               {{columnFourName}}
             </a>
           </span>
         </td>
         <td>
           <span ng-if="columnFiveShow == true" ng-class="{'column-header': columnFiveShow == true}">
-            <a ng-click="!columnFiveSortable || sortColumn('5')">
+            <a ng-click="!columnFiveSortable || sortColumn('column5')">
               {{columnFiveName}}
             </a>
           </span>
         </td>
         <td>
           <span ng-if="columnSixShow == true" ng-class="{'column-header': columnSixShow == true}">
-            <a ng-click="!columnSixSortable || sortColumn('6')">
+            <a ng-click="!columnSixSortable || sortColumn('column6')">
              {{columnSixName}}
             </a>
           </span>
         </td>
         <td>
           <span ng-if="columnSevenShow == true" ng-class="{'column-header': columnSevenShow == true}">
-            <a ng-click="!columnSevenSortable || sortColumn('7')">
+            <a ng-click="!columnSevenSortable || sortColumn('column7')">
               {{columnSevenName}}
             </a>
           </span>
         </td>
         <td>
           <span ng-if="columnEightShow == true" ng-class="{'column-header': columnEightShow == true}">
-            <a ng-click="!columnEightSortable || sortColumn('8')">
+            <a ng-click="!columnEightSortable || sortColumn('column8')">
               {{columnEightName}}
             </a>
           </span>
         </td>
         <td>
           <span ng-if="columnNineShow == true" ng-class="{'column-header': columnNineShow == true}">
-            <a ng-click="!columnNineSortable || sortColumn('9')">
+            <a ng-click="!columnNineSortable || sortColumn('column9')">
              {{columnNineName}}
             </a>
           </span>
@@ -73,63 +73,63 @@
         <tr ng-show="row.show" ng-repeat="row in rows">
           <td>
             <span ng-if="columnOneShow == true" ng-class="{'column-body': columnOneShow == true}">
-              <a ng-if="columnOneShow == true" ng-click="rowItemClicked(row, 'column1')">
+              <a ng-if="columnOneShow == true" ng-click="!row.column1.clickable || rowItemClicked(row, 'column1')">
                 {{ row.column1.value }}
               </a>
             </span>
           </td>
           <td>
             <span ng-if="columnTwoShow == true" ng-class="{'column-body': columnTwoShow == true}">
-              <a ng-if="columnTwoShow == true" ng-click="rowItemClicked(row, 'column2')">
+              <a ng-if="columnTwoShow == true" ng-click="!row.column2.clickable || rowItemClicked(row, 'column2')">
                 {{ row.column2.value }}
               </a>
             </span>
           </td>
           <td>
             <span ng-if="columnThreeShow == true" ng-class="{'column-body': columnThreeShow == true}">
-              <a ng-if="columnOneShow == true" ng-click="rowItemClicked(row, 'column3')">
+              <a ng-if="columnOneShow == true" ng-click="!row.column3.clickable || rowItemClicked(row, 'column3')">
                 {{ row.column3.value }}
               </a>
             </span>
           </td>
           <td>
             <span ng-if="columnFourShow == true" ng-class="{'column-body': columnFourShow == true}">
-              <a ng-if="columnFourShow == true" ng-click="rowItemClicked(row, 'column4')">
+              <a ng-if="columnFourShow == true" ng-click="!row.column4.clickable || rowItemClicked(row, 'column4')">
                 {{ row.column4.value }}
               </a>
             </span>
           </td>
           <td>
             <span ng-if="columnFiveShow == true" ng-class="{'column-body': columnFiveShow == true}">
-              <a ng-if="columnFiveShow == true" ng-click="rowItemClicked(row, 'column5')">
+              <a ng-if="columnFiveShow == true" ng-click="!row.column5.clickable || rowItemClicked(row, 'column5')">
                 {{ row.column5.value }}
               </a>
             </span>
           </td>
           <td>
             <span ng-if="columnSixShow == true" ng-class="{'column-body': columnSixShow == true}">
-              <a ng-if="columnSixShow == true" ng-click="rowItemClicked(row, 'column6')">
+              <a ng-if="columnSixShow == true" ng-click="!row.column6.clickable || rowItemClicked(row, 'column6')">
                 {{ row.column6.value }}
               </a>
             </span>
           </td>
           <td>
             <span ng-if="columnSevenShow == true" ng-class="{'column-body': columnSevenShow == true}">
-              <a ng-if="columnSevenShow == true" ng-click="rowItemClicked(row, 'column7')">
+              <a ng-if="columnSevenShow == true" ng-click="!row.column7.clickable || rowItemClicked(row, 'column7')">
                 {{ row.column7.value }}
               </a>
             </span>
           </td>
           <td>
             <span ng-if="columnEightShow == true" ng-class="{'column-body': columnEightShow == true}">
-              <a ng-if="columnEightShow == true" ng-click="rowItemClicked(row, 'column8')">
+              <a ng-if="columnEightShow == true" ng-click="!row.column8.clickable || rowItemClicked(row, 'column8')">
                 {{ row.column8.value }}
               </a>
             </span>
           </td>
           <td>
             <span ng-if="columnNineShow == true" ng-class="{'column-body': columnNineShow == true}">
-              <a ng-if="columnNineShow == true" ng-click="rowItemClicked(row, 'column9')">
+              <a ng-if="columnNineShow == true" ng-click="!row.column9.clickable || rowItemClicked(row, 'column9')">
                 {{ row.column9.value }}
               </a>
             </span>

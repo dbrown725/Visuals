@@ -16,7 +16,7 @@
 
   function tableOne() {
 
-    var controller = ['$scope', '$element', '$attrs', '$http', function ($scope, $element, $attrs, $http) {
+    var controller = ['$scope', function ($scope) {
       $scope.$watch('responsedata', function(newValue, oldValue) {
         if(Object.keys(newValue).length) {
             clearTable();
@@ -32,8 +32,13 @@
 
       init();
 
+      //raw back-end response, used for sorting
       $scope.response = {};
+
+      //formatted actual rows that get displayed
       $scope.rows = [];
+
+      //sort variables
       $scope.currentSortColumn = '';
       $scope.sortAscending = true;
 
@@ -45,18 +50,35 @@
           $scope.currentSortColumn = columnNumber;
           $scope.sortAscending = true;
         }
-        function compare(a,b) {
-          var val1 = a['column' + columnNumber].value;
-          var val2 = b['column' + columnNumber].value;
-          if(a['column' + columnNumber].number) {
-            //console.log('is number');
-            val1 = Number(a['column' + columnNumber].value);
-            val2 = Number(b['column' + columnNumber].value);
+
+        function determineSortLevel() {
+          for (var k = 0; k < $scope.response.rows.length; k++) {
+            if($scope.response.rows[k][columnNumber].value) {
+              return 'level1';
+            }
           }
-          //console.log('val1: ', val1);
-          //console.log('val1: ', val2);
+          for (var m = 0; m < $scope.response.rows.length; m++) {
+            for (var n = 0; n < $scope.response.rows[m].rows.length; n++) {
+              if($scope.response.rows[m].rows[n][columnNumber].value) {
+                return 'level2';
+              }
+            }
+            return 'level3';
+          }
+        }
+
+        var sortLevel = determineSortLevel();
+        console.log('sortLevel',sortLevel);
+
+        function compare(a,b) {
+          var val1 = a[columnNumber].value;
+          var val2 = b[columnNumber].value;
+          if(a[columnNumber].number) {
+            val1 = Number(a[columnNumber].value);
+            val2 = Number(b[columnNumber].value);
+          }
           if($scope.sortAscending) {
-            console.log('ascending');
+            //console.log('ascending');
             if (val1 < val2) {
               return -1;
             }
@@ -65,7 +87,7 @@
             }
             return 0;
           } else {
-            console.log('descending');
+            //console.log('descending');
             if (val1 < val2) {
               return 1;
             }
@@ -76,34 +98,20 @@
           }
         }
 
-        if($scope.rows && !$scope.rows[0].groupingRow) {
-          console.log('$scope.response.rows', $scope.response.rows);
+        if(sortLevel === 'level1') {
           $scope.response.rows.sort(compare);
-          setTableBody($scope.response, false);
-        } else {
-          // var hasValue = false;
-          // for (var i = 0; i < $scope.response.rows.length; i++) {
-          //   if($scope.response.rows) {
-          //     hasValue = true;
-          //     break;
-          //   }
-          // }
-          // console.log('hasValue', hasValue);
-          // if(hasValue) {
-          //   $scope.response.rows.sort(compare);
-          // } else {
-          //   for (var j = 0; j < $scope.response.rows.length; j++) {
-          //     //console.log('subRows', $scope.response.rows[i])
-          //     $scope.response.rows[j].rows.sort(compare);
-          //   }
-          // }
+        } else if(sortLevel === 'level2') {
           for (var j = 0; j < $scope.response.rows.length; j++) {
-            //console.log('subRows', $scope.response.rows[i])
             $scope.response.rows[j].rows.sort(compare);
           }
-
-          setTableBody($scope.response, false);
+        } else if(sortLevel === 'level3') {
+          for (var m = 0; m < $scope.response.rows.length; m++) {
+            for (var n = 0; n < $scope.response.rows[m].rows.length; n++) {
+              $scope.response.rows[m].rows[n].rows.sort(compare);
+            }
+          }
         }
+        setTableBody($scope.response, false);
       };
 
       function clearTable() {
