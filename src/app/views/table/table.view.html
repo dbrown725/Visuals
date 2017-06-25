@@ -9,6 +9,11 @@
     <button ng-click="Table.retrieveData('threeDeep')">
       Three Deep
     </button>
+    <button ng-click="Table.retrieveData('drillDown')">
+      Drill Down
+    </button>
   </div>
-  <table-one responsedata="Table.response" mycallback="Table.handleDrillDownClick(obj, column)"></table-one>
+  <table-one responsedata="Table.response"
+    mycallback="Table.handleDrillDownClick(obj, column)"
+    drilldownsort="Table.handleDrillDownSortClick(sortKey)"></table-one>
 </div>
