@@ -66,6 +66,27 @@
             </a>
           </span>
         </td>
+        <td>
+          <span ng-if="columnTenShow == true" ng-class="{'column-header': columnTenShow == true}">
+            <a ng-click="!columnTenSortable || sortColumn('column10', columnTenSortAsc, columnTenSortDesc)">
+             {{columnTenName}}
+            </a>
+          </span>
+        </td>
+        <td>
+          <span ng-if="columnElevenShow == true" ng-class="{'column-header': columnElevenShow == true}">
+            <a ng-click="!columnElevenSortable || sortColumn('column11', columnElevenSortAsc, columnElevenSortDesc)">
+             {{columnElevenName}}
+            </a>
+          </span>
+        </td>
+        <td>
+          <span ng-if="columnTwelveShow == true" ng-class="{'column-header': columnTwelveShow == true}">
+            <a ng-click="!columnTwelveSortable || sortColumn('column12', columnTwelveSortAsc, columnTwelveSortDesc)">
+             {{columnTwelveName}}
+            </a>
+          </span>
+        </td>
       </tr>
       </thead>
       <tbody class="table-body">
@@ -131,6 +152,27 @@
             <span ng-if="columnNineShow == true" ng-class="{'column-body': columnNineShow == true}">
               <a ng-if="columnNineShow == true" ng-click="!row.column9.clickable || rowItemClicked(row, 'column9')">
                 {{ row.column9.value }}
+              </a>
+            </span>
+          </td>
+          <td>
+            <span ng-if="columnTenShow == true" ng-class="{'column-body': columnTenShow == true}">
+              <a ng-if="columnTenShow == true" ng-click="!row.column10.clickable || rowItemClicked(row, 'column10')">
+                {{ row.column10.value }}
+              </a>
+            </span>
+          </td>
+          <td>
+            <span ng-if="columnElevenShow == true" ng-class="{'column-body': columnElevenShow == true}">
+              <a ng-if="columnElevenShow == true" ng-click="!row.column11.clickable || rowItemClicked(row, 'column11')">
+                {{ row.column11.value }}
+              </a>
+            </span>
+          </td>
+          <td>
+            <span ng-if="columnTwelveShow == true" ng-class="{'column-body': columnTwelveShow == true}">
+              <a ng-if="columnTwelveShow == true" ng-click="!row.column12.clickable || rowItemClicked(row, 'column12')">
+                {{ row.column12.value }}
               </a>
             </span>
           </td>

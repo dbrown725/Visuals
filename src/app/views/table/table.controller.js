@@ -31,6 +31,16 @@
       console.log('sortKey', newSortKey);
       drillDownRequest.studentIDFilter.sortFields = newSortKey;
       drillDown();
+      //drillDownRequest2.studentIDFilter.sortFields = newSortKey;
+      //drillDown2();
+    };
+
+    vm.handleDrillDown2SortClick = function(newSortKey) {
+      console.log('sortKey', newSortKey);
+      drillDownRequest.studentIDFilter.sortFields = newSortKey;
+      drillDown();
+      // drillDownRequest2.studentIDFilter.sortFields = newSortKey;
+      // drillDown2();
       //console.log('column', column);
       //alert('From parent controller\n\nDrillDowned on: ' + column + '\n\nRequest object to send:\n' + JSON.stringify(object));
     };
@@ -45,6 +55,7 @@
         oneDeep();
       } else if (transaction === 'drillDown') {
         drillDown();
+        //drillDown2();
       }
     };
 
