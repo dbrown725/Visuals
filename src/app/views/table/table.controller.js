@@ -21,41 +21,6 @@
 
     vm.response = {};
 
-    var drillDownRequest = {
-      requestType: 'STUDENT_DISTINCT_STUDENT_COUNT',
-      studentDemoFilter: {
-        enrlmntDateFrom: 1325394000000,
-        enrlmntDateTo: 1491105600000,
-        wthdrwlDateFrom: null,
-        wthdrwlDateTo: null,
-        eligExpDateFrom: null,
-        eligExpDateTo: null,
-        boolOpenEnrlmnt: false,
-        rptGrping: 'State',
-        selectedStates: '5,10',
-        selectedEnrlTypes: null,
-        selectedCourseTypes: '1,2,3,4,5,6,7,8,9',
-        selectedAssessmentTypes: '1,2,3,4,5,6,7,8',
-        asmntAdminDateFrom: null,
-        asmntAdminDateTo: null,
-        beginAcademicYear: 0,
-        endAcademicYear: 0,
-        periodType: 'No Period',
-        categoryType: 'Category 1',
-        countType: null,
-        requestType: null
-      },
-      studentIDFilter: {
-        stateKey: '3',
-        districtId: null,
-        category: 'No Data Submitted',
-        category2: 'No Data Submitted',
-        beginRow: 1,
-        endRow: 20,
-        sortFields: 'MSIX_ID_ASC'
-      }
-    };
-
     vm.handleDrillDownClick = function(object, column) {
       console.log('object', object);
       console.log('column', column);
@@ -85,6 +50,7 @@
 
     //********* REPLACE START **************************************
 
+    var drillDownRequest = {};
 
     function threeDeep() {
       alert('see Dave for threeDeep specific sample code/data');
