@@ -169,6 +169,21 @@
           $scope.columnNineSortable = false;
           $scope.columnNineSortAsc = '';
           $scope.columnNineSortDesc = '';
+          $scope.columnTenName = 'Header Ten';
+          $scope.columnTenShow = false;
+          $scope.columnTenSortable = false;
+          $scope.columnTenSortAsc = '';
+          $scope.columnTenSortDesc = '';
+          $scope.columnElevenName = 'Header Eleven';
+          $scope.columnElevenShow = false;
+          $scope.columnElevenSortable = false;
+          $scope.columnElevenSortAsc = '';
+          $scope.columnElevenSortDesc = '';
+          $scope.columnTwelveName = 'Header Twelve';
+          $scope.columnTwelveShow = false;
+          $scope.columnTwelveSortable = false;
+          $scope.columnTwelveSortAsc = '';
+          $scope.columnTwelveSortDesc = '';
       }
 
       function setTableHeaders() {
@@ -234,6 +249,27 @@
           $scope.columnNineSortable = $scope.response.columnHeaders.header9.clickable;
           $scope.columnNineSortAsc = $scope.response.columnHeaders.header9.sortAsc;
           $scope.columnNineSortDesc = $scope.response.columnHeaders.header9.sortDesc;
+        }
+        if($scope.response.columnHeaders.header10) {
+          $scope.columnTenName = $scope.response.columnHeaders.header10.value;
+          $scope.columnTenShow = true;
+          $scope.columnTenSortable = $scope.response.columnHeaders.header10.clickable;
+          $scope.columnTenSortAsc = $scope.response.columnHeaders.header10.sortAsc;
+          $scope.columnTenSortDesc = $scope.response.columnHeaders.header10.sortDesc;
+        }
+        if($scope.response.columnHeaders.header11) {
+          $scope.columnElevenName = $scope.response.columnHeaders.header11.value;
+          $scope.columnElevenShow = true;
+          $scope.columnElevenSortable = $scope.response.columnHeaders.header11.clickable;
+          $scope.columnElevenSortAsc = $scope.response.columnHeaders.header11.sortAsc;
+          $scope.columnElevenSortDesc = $scope.response.columnHeaders.header11.sortDesc;
+        }
+        if($scope.response.columnHeaders.header12) {
+          $scope.columnTwelveName = $scope.response.columnHeaders.header12.value;
+          $scope.columnTwelveShow = true;
+          $scope.columnTwelveSortable = $scope.response.columnHeaders.header12.clickable;
+          $scope.columnTwelveSortAsc = $scope.response.columnHeaders.header12.sortAsc;
+          $scope.columnTwelveSortDesc = $scope.response.columnHeaders.header12.sortDesc;
         }
       }
 
