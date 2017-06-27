@@ -45,7 +45,7 @@
 
       $scope.sortColumn = function(columnNumber, sortAscKey, sortDescKey) {
 
-
+        console.log('columnNumber', columnNumber);
         console.log('sortAscKey', sortAscKey);
         console.log('sortDescKey', sortDescKey);
         if(columnNumber === $scope.currentSortColumn) {
@@ -75,8 +75,8 @@
                   return 'level2';
                 }
               }
-              return 'level3';
             }
+            return 'level3';
           }
 
           var sortLevel = determineSortLevel();
