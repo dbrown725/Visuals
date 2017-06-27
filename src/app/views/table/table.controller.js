@@ -21,6 +21,29 @@
 
     vm.response = {};
 
+    vm.request = '';
+    vm.url = '';
+    vm.authKey = '';
+
+    vm.submit = function() {
+      var headers = {};
+      if(vm.authKey) {
+        var authorization = 'Basic ' + vm.authKey;
+        headers = {'Authorization': authorization};
+        $http.post(vm.url, vm.request, {headers: headers}).then(function (response) {
+            console.log(response);
+            vm.response = response.data;
+        });
+      } else {
+        $http.post(vm.url, vm.request).
+        then(function (response) {
+            console.log(response);
+            vm.response = response.data;
+        });
+      }
+    };
+
+
     vm.handleDrillDownClick = function(object, column) {
       console.log('object', object);
       console.log('column', column);

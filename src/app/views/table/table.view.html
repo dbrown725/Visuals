@@ -12,6 +12,21 @@
     <button ng-click="Table.retrieveData('drillDown')">
       Drill Down
     </button>
+    <div class = 'input-wrapper'>
+  Request:
+  <textarea ng-model="Table.request"></textarea>
+  <br>    <br>
+  Url:
+  <input type="text" ng-model="Table.url">
+  <br>    <br>
+  AuthKey:
+  <input type="text" ng-model="Table.authKey">
+      <br>    <br>
+  <button ng-click="Table.submit()">
+    Submit
+  </button>
+</div>
+
   </div>
   <table-one responsedata="Table.response"
     mycallback="Table.handleDrillDownClick(obj, column)"
