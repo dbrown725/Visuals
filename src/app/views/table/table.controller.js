@@ -86,6 +86,8 @@
 
     var drillDownRequest = {};
 
+    var drillDownRequest2 = {};
+
     function threeDeep() {
       alert('see Dave for threeDeep specific sample code/data');
     }
