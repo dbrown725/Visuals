@@ -108,6 +108,9 @@
 
           if(sortLevel === 'level1') {
             $scope.response.rows.sort(compare);
+            for (var j = 0; j < $scope.response.rows.length; j++) {
+              $scope.response.rows[j].rows.sort(compare);
+            }
           } else if(sortLevel === 'level2') {
             for (var j = 0; j < $scope.response.rows.length; j++) {
               $scope.response.rows[j].rows.sort(compare);
