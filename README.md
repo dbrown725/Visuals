@@ -9,7 +9,7 @@ Install Bower ```npm install -g bower```
 
 Install dependencies ```npm install && bower install```
 
-To start the development server
+To start the development  server
 
 ```
 npm start
